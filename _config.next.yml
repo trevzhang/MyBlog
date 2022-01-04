@@ -118,6 +118,7 @@ darkmode: false
 menu:
   home: / || fa fa-home
   Java: /categories/Java || fa fa-book
+  随笔感想: /categories/随笔感想 || fa fa-pen
   categories: /categories/ || fa fa-th
   #about: /about/ || fa fa-user
   #tags: /tags/ || fa fa-tags

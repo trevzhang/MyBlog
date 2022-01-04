@@ -18,21 +18,7 @@ return Optional.ofNullable(service.A()).orElse(service.B())
 
 **orElse(T)无论前面Optional容器是null还是non-null，都会执行orElse里的方法，orElseGet(Supplier)并不会，如果service无异常抛出的情况下，Optional使用orElse或者orElseGet的返回结果都是一样的。**
 
-stack overflow上有人还给出这样一个例子：
-
-![1.webp](http://ww1.sinaimg.cn/large/005PIxshgy1gm5dphf4r1j30u00ehmyj.jpg)
-
-↑上面提问者大概的意思就是，orElse()和orElseGet()都能在Optional容器的值为空时提供一个可选的值，用orElse(new Object())可以直接传入对象，而用orElseGet(Supplier)时需要传入一个Supplier（可以为Lamda表达式），问还有没有其他区别。
-
-![2.webp](http://ww1.sinaimg.cn/large/005PIxshgy1gm5dpqn9vhj30u00ehwfs.jpg)
-
-
-
-↑作者采用的最佳答案是这样的
-
-
-
-看了上面代码，我就把我的代码改成如下即可：
+代码改成如下即可：
 
 ```
 return Optional.ofNullable(service.A()).orElseGet(() -> service.B())
